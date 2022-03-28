@@ -1,0 +1,9 @@
+import re
+s = input()
+# s1 = "This company is not poor at all."
+# s2 = "I'm not at all happy about it."
+p = re.compile(r"not(.*) at all")
+d = p.sub("good", s)
+print(d)
+# This company is good.
+# I'm good happy about it.
