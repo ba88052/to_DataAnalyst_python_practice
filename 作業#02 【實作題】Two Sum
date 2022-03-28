@@ -1,0 +1,13 @@
+# First question: nums = [2,7,11,15] target = 9 
+
+# Second question: nums = [3,2,4] target = 6 
+
+def TwoSum(nums, target):
+    for i in range(len(nums)):
+        for l in range(len(nums)):
+            if nums[i] + nums[l] == target and i != l:
+                return (i, l)
+            else:
+                return "There is no right answer!!"
+
+TwoSum(nums, target)
