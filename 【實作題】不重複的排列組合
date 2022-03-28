@@ -1,0 +1,19 @@
+def loop(l):
+    R = []
+    if len(l) == 1:
+        return l
+    else:
+        for i in range(len(l)):
+            rest = l[:i] + l[i+1:]
+            rest = loop(rest)
+            for x in rest:
+                R.append(l[i]+ x)
+    return R
+
+s = "ABA" #input() # AB
+l = []
+[l.append(i) for i in s]
+l = list(set(l))
+d = loop(l)
+    
+print(d) # ['AB', 'BA']
