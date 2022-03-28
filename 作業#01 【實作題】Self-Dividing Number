@@ -1,0 +1,27 @@
+def Self_Dividing_Number(num):
+    for l in str(num):
+        l = int(l)
+        if l == 0:
+            return False
+        elif num % l != 0:
+            return False
+    return True
+
+def The_Biggest_Range_in_list(x):
+    biggestran = 0
+    for i in range(len(x)-1):
+        ran =  x[i+1] - x[i]
+        if  ran > biggestran:
+            biggestran = ran
+            biggest = [x[i], x[i+1]]
+    return biggest
+
+
+a, b = int(input()), int(input())
+SDNlist = []
+for num in range(a, b+1):
+    if Self_Dividing_Number(num):
+        SDNlist.append(num)
+    
+
+The_Biggest_Range_in_list(SDNlist)
