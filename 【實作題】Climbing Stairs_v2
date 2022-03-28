@@ -1,0 +1,17 @@
+# 因為一次只能走 1 階或 2 階，所以運用遞迴的方式，先固定最後一種走法，將走到 n-1 階和 n-2 階的幾種可能算出來再全部加總即可
+
+def climbStairs(n):
+  if n == 1:
+    return 1
+  elif n == 2:
+    return 2        
+  else:
+    x, y = 1, 2
+    for i in range(n - 2):
+      x, y = y, x + y
+      
+    return y
+  
+n = int(input())
+# print(climbStairs(4)) 
+# -> 5
